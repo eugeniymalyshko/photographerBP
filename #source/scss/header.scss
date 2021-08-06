@@ -1,0 +1,252 @@
+
+
+
+
+
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: $white;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    z-index: 2;
+  }
+  &__row {
+    position: relative;
+    @include flexbox;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    @media (max-width: 480px) {
+      padding: 5px 0;
+    }
+  }
+  &__logos {
+    @include flexbox;
+  }
+  &__logo {
+    flex: 0 0 50px;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+    @media (max-width: 768px) {
+      flex: 0 0 40px;
+    }
+    &_main {
+      margin-right: 22px;
+      @media (max-width: 992px) {
+        margin-right: 6px;
+      }
+    }
+  }
+  &__image {
+    max-width: 100%;
+    display: block;
+  }
+  &__menu {
+    @media (max-width: 991px) {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease;
+      padding-left: 25px;
+      &.active {
+        z-index: 2;
+        top: 100px;
+      }
+    }
+    @media (min-width: 992px) {
+      margin-left: auto;
+    }
+    &_hidden {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease;
+      padding: 100px 0 0 25px;
+      background: linear-gradient(to right, #DAE8EE 40%, rgba(0,0,0,0.2) 30%,rgba(0,0,0,0.2) 30%);
+      @media (max-width: 768px) {
+        background: #DAE8EE;
+      }
+      @media (max-width: 991px) {
+        padding-top: 320px;
+      }
+
+      &.active {
+        top: 0;
+      }
+    }
+  }
+  &__list {
+    @include flexbox;
+    position: relative;
+    z-index: 2;
+    @media (max-width: 991px) {
+      display: block;
+    }
+    &_hidden {
+      position: relative;
+      display: block;
+      height: 100%;
+      left: 0;
+    }
+  }
+  &__link {
+    color: $black;
+    font-size: px-to-rem(16px);
+    font-weight: 500;
+    line-height: px-to-rem(24px);
+    transition: width 0.3s ease-in-out;
+    display: inline-block;
+    position: relative;
+    @media (max-width: 991px) {
+      font-size: px-to-rem(24px);
+    }
+    &_hidden {
+      font-size: px-to-rem(24px);
+    }
+    &:after {
+      display: block;
+      content: "";
+      background-color: $black;
+      height: 2px;
+      width: 0%;
+      left: 50%;
+      bottom: -5px;
+      position: absolute;
+      transition: width .3s ease-in-out;
+      transform: translateX(-50%);
+    }
+    &:hover:after, &:focus:after {
+      width: 100%;
+    }
+  }
+  &__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 3;
+    @media (min-width: 992px) {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+    @media (max-width: 991px) {
+      margin-left: 0;
+      order: 4;
+    }
+    &.active:before {
+      transform: rotate(45deg);
+      top: 9px;
+    }
+    &.active:after {
+      transform: rotate(-45deg);
+      bottom: 9px;
+    }
+    & span {
+      position: absolute;
+      background-color: $black;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      top:9px;
+      transition: all 0.3s ease;
+    }
+    &.active span {
+      transform: scale(0);
+    }
+    &:before, &:after {
+      content: '';
+      background-color: $black;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      right: 0;
+      transition: all 0.3s ease;
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+  }
+  &__column {
+    @media (max-width: 992px) {
+      margin-left: auto;
+      margin-right: 15px;
+    }
+    &_right {}
+  }
+  &__donate {}
+}
+.image {}
+.list {
+  &__item {
+    margin-left: 88px;
+    &:first-child {
+      margin-left: 15px;
+      @media (min-width: 992px) and (max-width: 1199px) {
+        margin-left: 10px;
+     }
+      @media (max-width: 991px) {
+        margin-left: 0;
+      }
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      margin-left: 40px;
+    }
+    @media (max-width: 991px) {
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+    &_hidden {
+      margin-bottom: 20px;
+    }
+  }
+}
+.donate {
+  @include flexbox;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+.button {
+  @include box-shadow;
+  display: block;
+  margin-left: 16px;
+  border-radius: 5px;
+  color: $white;
+  border: solid 1px transparent;
+  &:hover {
+    border: solid 1px $donate;
+  }
+  &_sm {
+    padding: px-to-rem(8px);
+  }
+  &_blue {
+    background-color: $donate;
+  }
+}
+.button-hover {
+  &_white {
+    &:hover {
+      background-color: $white;
+      color: $donate;
+    }
+  }
+}
+
+
+
+

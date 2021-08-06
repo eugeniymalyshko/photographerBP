@@ -1,0 +1,9 @@
+// Function for converting a px based font-size to rem.
+@function px-to-rem($size, $basicSize: 16px) {
+  //Default font size on html element is 100%, equivalent to 16px;
+  @return #{$size / $basicSize}rem;
+}
+
+@function px-to-percent($margin, $width-block:1140px) {
+  @return #{($margin / $width-block)*100%};
+}

@@ -1,0 +1,82 @@
+.footer {
+  background-color: ;
+  padding: 20px 0;
+  @media (min-width: 320px) {
+    padding: 10px 0;
+  }
+  &__row {
+    @include flexbox;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: 320px) and (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+  &__list {
+    @include flexbox;
+    margin-left: 100px;
+    &:first-child {
+      margin-left: 0;
+
+    }
+  }
+  &__link {
+    color: $white;
+    display: inline-block;
+    position: relative;
+    &:after {
+      display: block;
+      content: "";
+      background-color: $white;
+      height: 2px;
+      width: 0%;
+      left: 50%;
+      bottom: -5px;
+      position: absolute;
+      transition: width .3s ease-in-out;
+      transform: translateX(-50%);
+    }
+    &:hover:after, &:focus:after {
+      width: 100%;
+    }
+  }
+  &__social-icons {
+    @include flexbox;
+  }
+  &__image {
+    @media (min-width: 320px) and (max-width: 479px) {
+      width: 30px;
+      height: 30px;
+    }
+    @media (min-width: 480px) and (max-width: 767px) {
+      //width: 30px;
+      //height: 30px;
+    }
+  }
+}
+.list {
+  &__item-footer {
+    margin-left: 20px;
+    @media (min-width: 320px) and (max-width: 480px) {
+      font-size: 14px;
+      margin-bottom: 10px;
+      margin-left: 15px;
+    }
+  }
+}
+.social-icons {
+  &:nth-child(n+2) {
+    margin-left: 40px;
+    @media (min-width: 320px) and (max-width: 767px) {
+      margin-left:10px;
+
+
+
+    }
+  }
+  &__fb {}
+  &__link {}
+  &__insta {}
+  &__twitter {}
+  &__you-tube {}
+}
