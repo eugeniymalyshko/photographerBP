@@ -1,11 +1,4 @@
-
-
-
-
-
-
 .header {
-  position: sticky;
   top: 0;
   z-index: 50;
   background-color: $white;
@@ -16,16 +9,52 @@
     height: 100%;
     background-color: $white;
     z-index: 2;
-  }
+  // .header__row
   &__row {
     position: relative;
-    @include flexbox;
+    @include flexbox();
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
     @media (max-width: 480px) {
       padding: 5px 0;
     }
+  }
+  // .header__logo
+  &__logo {}
+  // .header__image
+  &__image {}
+  // .header__menu
+  &__menu {}
+  // .header__list
+  &__list {
+    @include flexbox();
+  }
+  // .header__link
+  &__link {    
+}
+  // .header__burger
+  &__burger {}
+}
+.container {
+}
+.logo {
+}
+.image {
+}
+.list {
+  // .list__item
+  &__item {}
+}
+.uppercase {
+}
+
+.header {
+  position: sticky;
+  
+  }
+  &__row {
+    
   }
   &__logos {
     @include flexbox;
@@ -229,20 +258,20 @@
   color: $white;
   border: solid 1px transparent;
   &:hover {
-    border: solid 1px $donate;
+    // border: solid 1px $donate;
   }
   &_sm {
     padding: px-to-rem(8px);
   }
   &_blue {
-    background-color: $donate;
+    // background-color: $donate;
   }
 }
 .button-hover {
   &_white {
     &:hover {
       background-color: $white;
-      color: $donate;
+      // color: $donate;
     }
   }
 }
