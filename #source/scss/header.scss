@@ -1,281 +1,146 @@
 .header {
-  top: 0;
-  z-index: 50;
-  background-color: $white;
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: $white;
-    z-index: 2;
   // .header__row
   &__row {
-    position: relative;
     @include flexbox();
-    justify-content: space-between;
-    align-items: center;
+    justify-self: space-between;
     padding: 10px 0;
-    @media (max-width: 480px) {
-      padding: 5px 0;
-    }
   }
   // .header__logo
-  &__logo {}
+  &__logo {
+    flex: 1 0 50%;
+  }
   // .header__image
-  &__image {}
+  &__image {
+    display: block;
+    max-width: 45%;
+     @media (min-width: 320px) and (max-width: 991px) {
+      max-width: 60%;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      max-width: 90%;
+    }
+  }
   // .header__menu
   &__menu {}
   // .header__list
   &__list {
     @include flexbox();
+    @media screen and (max-width: 767px) {
+      display: block;
+    }
   }
   // .header__link
-  &__link {    
-}
-  // .header__burger
-  &__burger {}
-}
-.container {
-}
-.logo {
-}
-.image {
-}
-.list {
-  // .list__item
-  &__item {}
-}
-.uppercase {
-}
-
-.header {
-  position: sticky;
-  
-  }
-  &__row {
-    
-  }
-  &__logos {
-    @include flexbox;
-  }
-  &__logo {
-    flex: 0 0 50px;
-    overflow: hidden;
-    position: relative;
-    z-index: 3;
-    @media (max-width: 768px) {
-      flex: 0 0 40px;
-    }
-    &_main {
-      margin-right: 22px;
-      @media (max-width: 992px) {
-        margin-right: 6px;
-      }
-    }
-  }
-  &__image {
-    max-width: 100%;
-    display: block;
-  }
-  &__menu {
-    @media (max-width: 991px) {
-      position: fixed;
-      top: -100%;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: all 0.3s ease;
-      padding-left: 25px;
-      &.active {
-        z-index: 2;
-        top: 100px;
-      }
-    }
-    @media (min-width: 992px) {
-      margin-left: auto;
-    }
-    &_hidden {
-      position: fixed;
-      top: -100%;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: all 0.3s ease;
-      padding: 100px 0 0 25px;
-      background: linear-gradient(to right, #DAE8EE 40%, rgba(0,0,0,0.2) 30%,rgba(0,0,0,0.2) 30%);
-      @media (max-width: 768px) {
-        background: #DAE8EE;
-      }
-      @media (max-width: 991px) {
-        padding-top: 320px;
-      }
-
-      &.active {
-        top: 0;
-      }
-    }
-  }
-  &__list {
-    @include flexbox;
-    position: relative;
-    z-index: 2;
-    @media (max-width: 991px) {
-      display: block;
-    }
-    &_hidden {
-      position: relative;
-      display: block;
-      height: 100%;
-      left: 0;
-    }
-  }
   &__link {
     color: $black;
     font-size: px-to-rem(16px);
-    font-weight: 500;
     line-height: px-to-rem(24px);
     transition: width 0.3s ease-in-out;
     display: inline-block;
     position: relative;
-    @media (max-width: 991px) {
-      font-size: px-to-rem(24px);
-    }
-    &_hidden {
-      font-size: px-to-rem(24px);
-    }
-    &:after {
+      &:after {
       display: block;
       content: "";
       background-color: $black;
-      height: 2px;
+      height: 1.6px;
       width: 0%;
       left: 50%;
-      bottom: -5px;
+      bottom: 1px;
       position: absolute;
       transition: width .3s ease-in-out;
       transform: translateX(-50%);
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: px-to-rem(14px);
     }
     &:hover:after, &:focus:after {
       width: 100%;
     }
   }
+  // .header__burger
   &__burger {
-    display: block;
-    position: relative;
-    width: 30px;
-    height: 20px;
-    z-index: 3;
-    @media (min-width: 992px) {
+    display: none;
+    @media (max-width: 767px) {
+      display: block;
+      position: relative;
       margin-left: auto;
-      margin-right: 10px;
-    }
-    @media (max-width: 991px) {
-      margin-left: 0;
-      order: 4;
-    }
-    &.active:before {
-      transform: rotate(45deg);
-      top: 9px;
-    }
-    &.active:after {
-      transform: rotate(-45deg);
-      bottom: 9px;
-    }
-    & span {
-      position: absolute;
-      background-color: $black;
-      right: 0;
-      width: 100%;
-      height: 2px;
-      top:9px;
-      transition: all 0.3s ease;
-    }
-    &.active span {
-      transform: scale(0);
+      width: 30px;
+      height: 20px;
+      z-index: 3;
+      &.active:before {
+        transform: rotate(45deg);
+        top: 9px;
+      }
+      &.active:after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+      }
+      &.active span {
+        transform: scale(0);
+      }
     }
     &:before, &:after {
-      content: '';
-      background-color: $black;
+      content: "";
+      background-color: red;
       position: absolute;
       width: 100%;
       height: 2px;
-      right: 0;
-      transition: all 0.3s ease;
+      left: 0;
     }
     &:before {
       top: 0;
+      transition: all 0.3s ease 0s;
     }
     &:after {
       bottom: 0;
+      transition: all 0.3s ease 0s;
+    }
+    &_line {
+      position: absolute;
+      background-color: red;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      top: 9px;
+      &.active {
+        @media (max-width: 767px) {
+          transform: scale(0);
+          transition: all 0.3s ease 0s;
+        }
+      }
     }
   }
-  &__column {
-    @media (max-width: 992px) {
-      margin-left: auto;
-      margin-right: 15px;
+  &__menu {
+    margin-left: auto;
+    @media (max-width: 767px) {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: orange;
+      padding: 70px 10px 20px 10px;
+      transition: all 0.3s ease 0s;
+      &.active {
+        top: 0;
+      }
     }
-    &_right {}
   }
-  &__donate {}
+}
+.logo {
+  max-width: 30%;
 }
 .image {}
 .list {
+  // .list__item
   &__item {
-    margin-left: 88px;
-    &:first-child {
+    &:nth-child(n+2) {
       margin-left: 15px;
-      @media (min-width: 992px) and (max-width: 1199px) {
-        margin-left: 10px;
-     }
-      @media (max-width: 991px) {
-        margin-left: 0;
-      }
+      @media screen and (max-width: 767px) {
+      margin: 15px 0 0;
     }
-    @media (min-width: 992px) and (max-width: 1199px) {
-      margin-left: 40px;
     }
-    @media (max-width: 991px) {
-      margin-left: 0;
-      margin-bottom: 20px;
-    }
-    &_hidden {
-      margin-bottom: 20px;
-    }
-  }
-}
-.donate {
-  @include flexbox;
-  justify-content: center;
-  position: relative;
-  z-index: 3;
-}
-.button {
-  @include box-shadow;
-  display: block;
-  margin-left: 16px;
-  border-radius: 5px;
-  color: $white;
-  border: solid 1px transparent;
-  &:hover {
-    // border: solid 1px $donate;
-  }
-  &_sm {
-    padding: px-to-rem(8px);
-  }
-  &_blue {
-    // background-color: $donate;
-  }
-}
-.button-hover {
-  &_white {
-    &:hover {
-      background-color: $white;
-      // color: $donate;
-    }
-  }
-}
 
-
-
+  }
+}
 

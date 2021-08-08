@@ -13,9 +13,8 @@ ibg();
 document.addEventListener("DOMContentLoaded", function () {
 	document.querySelector('.header__burger').onclick = function (event) {
 		document.querySelector('.header__burger').classList.toggle('active')
-		document.querySelector('.header__menu_hidden').classList.toggle('active')
 		document.querySelector('.header__menu').classList.toggle('active')
-		document.querySelector('.top-bar').classList.toggle('hidden')
+		// document.querySelector('.top-bar').classList.toggle('hidden')
 		document.querySelector('body').classList.toggle('lock')
     }
 })

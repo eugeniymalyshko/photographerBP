@@ -4,9 +4,9 @@
   &__row {
     @include flexbox();
     justify-content: space-between;
-    padding: 6px 0 8px;
+    padding: 6px 0 6px;
     @media screen and (max-width: 991px) {
-       padding: 5px 0 7px;
+       padding: 5px 0 5px;
     }
   }
   // .top-bar__social
@@ -25,7 +25,6 @@
   &__link {
     color: $white;
     font-size: px-to-rem(16px);
-    font-weight: 500;
     line-height: px-to-rem(24px);
     transition: width 0.3s ease-in-out;
     display: inline-block;
@@ -34,10 +33,10 @@
       display: block;
       content: "";
       background-color: $white;
-      height: 2px;
+      height: 1.6px;
       width: 0%;
       left: 50%;
-      bottom: -5px;
+      bottom: -2px;
       position: absolute;
       transition: width .3s ease-in-out;
       transform: translateX(-50%);
@@ -84,11 +83,6 @@
 }
 .white {
   color: $white;
-}
-.active {
-  &::after{
-    width: 100%;
-  }
 }
 
 
