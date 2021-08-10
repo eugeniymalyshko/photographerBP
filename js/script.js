@@ -14,41 +14,22 @@ document.addEventListener("DOMContentLoaded", function () {
 	document.querySelector('.header__burger').onclick = function (event) {
 		document.querySelector('.header__burger').classList.toggle('active')
 		document.querySelector('.header__menu').classList.toggle('active')
-		// document.querySelector('.top-bar').classList.toggle('hidden')
 		document.querySelector('body').classList.toggle('lock')
     }
 })
 //========================================================================================
-//================================= SCROLL HEADER ========================================
-// document.addEventListener("DOMContentLoaded", function () {
-// 	document.querySelector('.header').scrollTop = function (event) {
-// 		document.querySelector('.header').classList.toggle('fixed')
-// 	};
-// )};
-//========================================================================================
-//================================= SCROLL HEADER ========================================
-document.addEventListener("DOMContentLoaded", function () {
-	document.querySelector('.recent-donors__most-amount').onclick = function (event) {
-		document.querySelector('.recent-donors__recent-donors').classList.remove('_active')
-		document.querySelector('.recent-donors__most-amount').classList.add('_active')
-		document.querySelector('.recent-donors__list_a').classList.remove('_active')
-		document.querySelector('.recent-donors__list_h').classList.remove('_hidden')
-		document.querySelector('.recent-donors__list_h').classList.add('_active')
-	}
-
+//========================= FIXING HEADER ON SCROLL =====================================
+document.addEventListener('DOMContentLoaded', function () {
+	let scrollpos = window.pageYOffset
+	window.addEventListener('scroll', function () {
+		if(window.pageYOffset >= 30){
+			document.querySelector('.header').classList.add('fixed')
+		}
+		else {
+			document.querySelector('.header').classList.remove('fixed')
+		}
+	})
 })
-
-document.addEventListener("DOMContentLoaded", function () {
-	document.querySelector('.recent-donors__recent-donors').onclick = function (event) {
-		document.querySelector('.recent-donors__recent-donors').classList.add('_active')
-		document.querySelector('.recent-donors__most-amount').classList.remove('_active')
-		document.querySelector('.recent-donors__list_a').classList.add('_active')
-		document.querySelector('.recent-donors__list_h').classList.remove('_active')
-		document.querySelector('.recent-donors__list_h').classList.add('_hidden')
-	}
-})
-//========================================================================================
-
 //=================================== FORM SEND ==========================================
 'use strict'
 document.addEventListener('DOMContentLoaded', function () {

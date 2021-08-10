@@ -1,7 +1,75 @@
-.main {
-}
+.main {}
 .banner {
-		position: relative;
-
 	&__image {}
 }
+.portfolio {
+	padding: 50px 0;
+	&__title {
+		font-size: 30px;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+	// .portfolio__row
+	&__row {
+		@include flexbox();
+		flex-wrap: wrap;
+	}
+	// .portfolio__prewiev
+	&__prewiev {
+		// .portfolio__prewiev_1
+		&_1 {
+			flex: 1 0 25%;
+		}
+		// .portfolio__prewiev_2
+		&_2 {
+			flex: 1 0 25%;
+		}
+		// .portfolio__prewiev_3
+		&_3 {
+			flex: 1 0 25%;
+		
+		}
+		// .portfolio__prewiev_4
+		&_4 {
+			flex: 1 0 25%;
+		}
+	}
+}
+.prewiev {
+	// .prewiev__image
+	&__image {
+		// .prewiev__image_1
+		&_1 {}
+		// .prewiev__image_2
+		&_2 {}
+		// .prewiev__image_3
+		&_3 {}
+		// .prewiev__image_4
+		&_4 {}
+	}
+	// .prewiev__title
+	&__title {
+		// .prewiev__title_1
+		&_1 {}
+		// .prewiev__title_2
+		&_2 {}
+		// .prewiev__title_3
+		&_3 {}
+		// .prewiev__title_4
+		&_4 {}
+	}
+}
+.image {
+	width: 260px;
+	height: 147px;
+	// .image_1
+	&_1 {}
+	// .image_2
+	&_2 {}
+	// .image_3
+	&_3 {}
+	// .image_4
+	&_4 {}
+}
+
+

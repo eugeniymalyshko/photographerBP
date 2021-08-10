@@ -81,9 +81,10 @@
   // .icon__facebbok
   &__facebbok {}
 }
-.white {
-  color: $white;
+.active:after {
+  width: 100%;
 }
+
 
 
 
