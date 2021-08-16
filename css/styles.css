@@ -6,6 +6,7 @@
 }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -115,7 +116,8 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -300,7 +302,8 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -334,7 +337,8 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -422,7 +426,8 @@ body.lock {
   min-width: 320px;
   max-width: 1170px;
   padding: 0 15px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -441,14 +446,21 @@ body.lock {
 }
 
 .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100%;
   overflow: hidden;
 }
 
 .content {
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .hidden {
@@ -481,45 +493,56 @@ body.lock {
   display: none;
 }
 
-/*******************************************/
-/****************** MAIN *******************/
-.portfolio {
-  padding: 50px 0;
-}
-.portfolio__title {
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 50px;
-}
-.portfolio__row {
-  display: flex;
-  flex-wrap: wrap;
-}
-.portfolio__prewiev_1 {
-  flex: 1 0 25%;
-}
-.portfolio__prewiev_2 {
-  flex: 1 0 25%;
-}
-.portfolio__prewiev_3 {
-  flex: 1 0 25%;
-}
-.portfolio__prewiev_4 {
-  flex: 1 0 25%;
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.image {
-  width: 260px;
-  height: 147px;
+.title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 25px;
 }
+
+.row {
+  display: -ms-grid;
+  display: grid;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0%;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.overlay:hover {
+  opacity: 70%;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
 /*******************************************/
 /**************** TOP-BAR ******************/
 .top-bar {
   background-color: #1E3259;
 }
 .top-bar__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 6px 0 6px;
 }
 @media screen and (max-width: 991px) {
@@ -528,6 +551,8 @@ body.lock {
   }
 }
 .top-bar__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   counter-reset: #fff;
 }
@@ -543,6 +568,7 @@ body.lock {
   color: #fff;
   font-size: 1rem;
   line-height: 1.5rem;
+  -webkit-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
   display: inline-block;
   position: relative;
@@ -556,8 +582,10 @@ body.lock {
   left: 50%;
   bottom: -2px;
   position: absolute;
+  -webkit-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .top-bar__link:hover:after, .top-bar__link:focus:after {
   width: 100%;
@@ -592,12 +620,17 @@ body.lock {
   background-color: #fff;
 }
 .header__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-self: space-between;
+  -ms-grid-column-align: space-between;
+      justify-self: space-between;
   padding: 10px 0;
 }
 .header__logo {
-  flex: 1 0 50%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
   z-index: 2;
 }
 .header__image {
@@ -615,6 +648,8 @@ body.lock {
   }
 }
 .header__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 @media screen and (max-width: 767px) {
@@ -626,6 +661,7 @@ body.lock {
   color: #000;
   font-size: 1rem;
   line-height: 1.5rem;
+  -webkit-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
   display: inline-block;
   position: relative;
@@ -639,8 +675,10 @@ body.lock {
   left: 50%;
   bottom: 1px;
   position: absolute;
+  -webkit-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 @media screen and (max-width: 767px) {
   .header__link {
@@ -668,15 +706,18 @@ body.lock {
     z-index: 3;
   }
   .header__burger.active:before {
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
     top: 9px;
   }
   .header__burger.active:after {
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
     bottom: 9px;
   }
   .header__burger.active span {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
 .header__burger:before, .header__burger:after {
@@ -689,10 +730,12 @@ body.lock {
 }
 .header__burger:before {
   top: 0;
+  -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 .header__burger:after {
   bottom: 0;
+  -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 .header__burger_line {
@@ -705,7 +748,9 @@ body.lock {
 }
 @media (max-width: 767px) {
   .header__burger_line.active {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }
 }
@@ -722,6 +767,7 @@ body.lock {
     overflow: auto;
     background-color: #BFA799;
     padding: 85px 10px 20px 10px;
+    -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }
   .header__menu.active {
@@ -747,6 +793,98 @@ body.lock {
   width: 100%;
 }
 
+/*******************************************/
+/****************** MAIN *******************/
+/************* PORTFOLIO *****************/
+.portfolio {
+  padding: 20px;
+}
+.portfolio__row {
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+}
+.portfolio__block {
+  cursor: pointer;
+  border-radius: 5px;
+}
+.portfolio__prewiev {
+  position: relative;
+  -webkit-box-shadow: 0 3px 10px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 10px 5px rgba(0, 0, 0, 0.1);
+}
+.overlay__title {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.prewiev__image {
+  position: relative;
+  padding: 0 0 85% 0;
+}
+.prewiev__title {
+  text-align: center;
+  padding-top: 5px;
+  font-size: 18px;
+}
+/*******************************************
+*************** PORTFOLIO *****************/
+.faciliti__row {
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.faciliti__block {
+  cursor: pointer;
+}
+.faciliti__prewiev {
+  position: relative;
+  -webkit-box-shadow: 0 3px 10px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 10px 5px rgba(0, 0, 0, 0.1);
+}
+/******************************************
+*************** CONTACTS *****************/
+.contacts__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.form__title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.form__item {
+  margin-bottom: 20px;
+}
+.form__label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.form__input {
+  border: solid 1px #000;
+  height: 50px;
+  padding: 0 50px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 18px;
+}
+textarea.form__input {
+  min-height: 120px;
+  resize: vertical;
+  padding: 20px;
+}
+
+/*****************************************/
 /*******************************************/
 /***************** FOOTER ******************/
 /*******************************************/

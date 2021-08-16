@@ -1,39 +1,146 @@
-.main {}
-.banner {
-	&__image {}
-}
+/************* PORTFOLIO *****************/
 .portfolio {
-	padding: 50px 0;
-	&__title {
-		font-size: 30px;
-		text-align: center;
-		margin-bottom: 50px;
-	}
+	padding: 20px;
+	// .portfolio__title
+	&__title {}
 	// .portfolio__row
 	&__row {
-		@include flexbox();
-		flex-wrap: wrap;
+		gap: 15px;
+		grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+	}
+	// .portfolio__block
+	&__block {
+		cursor: pointer;
+		border-radius: 5px;
+		// .portfolio__block_1
+		&_1 {}
+		// .portfolio__block_2
+		&_2 {}
+		// .portfolio__block_3
+		&_3 {}
+		// .portfolio__block_4
+		&_4 {}
+		// .portfolio__block_5
+		&_5 {}
+		// .portfolio__block_6
+		&_6 {}
+		// .portfolio__block_7
+		&_7 {}
+		// .portfolio__block_8
+		&_8 {}
 	}
 	// .portfolio__prewiev
 	&__prewiev {
+		position: relative;
+		box-shadow: 0 3px 10px 5px rgb(0 0 0 / 10%);
 		// .portfolio__prewiev_1
-		&_1 {
-			flex: 1 0 25%;
-		}
+		&_1 {}
 		// .portfolio__prewiev_2
-		&_2 {
-			flex: 1 0 25%;
-		}
+		&_2 {}
 		// .portfolio__prewiev_3
-		&_3 {
-			flex: 1 0 25%;
-		
-		}
+		&_3 {}
 		// .portfolio__prewiev_4
-		&_4 {
-			flex: 1 0 25%;
-		}
+		&_4 {}
 	}
+	// .portfolio__overlay
+	&__overlay {}
+}
+.overlay {
+	// .overlay__title
+	&__title {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, 0);
+		color: $white;
+		text-align: center;
+		font-size: 24px;
+		line-height: 1.5;
+	}
+}
+.prewiev {
+	// .prewiev__image
+	&__image {
+		position: relative;
+		padding: 0 0 85% 0;
+		// .prewiev__image_1
+		&_1 {}
+		// .prewiev__image_2
+		&_2 {}
+		// .prewiev__image_3
+		&_3 {}
+		// .prewiev__image_4
+		&_4 {}
+	}
+	// .prewiev__title
+	&__title {
+		text-align: center;
+		padding-top: 5px;
+		font-size: 18px;
+		// .prewiev__title_1
+		&_1 {}
+		// .prewiev__title_2
+		&_2 {}
+		// .prewiev__title_3
+		&_3 {}
+		// .prewiev__title_4
+		&_4 {}
+	}
+}
+.image {
+	// .image_1
+	&_1 {}
+	// .image_2
+	&_2 {}
+	// .image_3
+	&_3 {}
+	// .image_4
+	&_4 {}
+}
+/*******************************************
+*************** PORTFOLIO *****************/
+.faciliti {
+	// .faciliti__title
+	&__title {
+		// .faciliti__title_1
+		&_1 {}
+		// .faciliti__title_2
+		&_2 {}
+		// .faciliti__title_3
+		&_3 {}
+	}
+	// .faciliti__row
+	&__row {
+		gap: 15px;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	}
+	// .faciliti__block
+	&__block {
+		cursor: pointer;
+		// .faciliti__block_1
+		&_1 {}
+		// .faciliti__block_2
+		&_2 {}
+		// .faciliti__block_3
+		&_3 {}
+		// .faciliti__block_4
+		&_4 {}
+	}
+	// .faciliti__prewiev
+	&__prewiev {
+		position: relative;
+		box-shadow: 0 3px 10px 5px rgb(0 0 0 / 10%);
+		// .faciliti__prewiev_1
+		&_1 {}
+		// .faciliti__prewiev_2
+		&_2 {}
+		// .faciliti__prewiev_3
+		&_3 {}
+		// .faciliti__prewiev_4
+		&_4 {}
+	}
+	// .faciliti__overlay
+	&__overlay {}
 }
 .prewiev {
 	// .prewiev__image
@@ -47,21 +154,8 @@
 		// .prewiev__image_4
 		&_4 {}
 	}
-	// .prewiev__title
-	&__title {
-		// .prewiev__title_1
-		&_1 {}
-		// .prewiev__title_2
-		&_2 {}
-		// .prewiev__title_3
-		&_3 {}
-		// .prewiev__title_4
-		&_4 {}
-	}
 }
 .image {
-	width: 260px;
-	height: 147px;
 	// .image_1
 	&_1 {}
 	// .image_2
@@ -71,5 +165,72 @@
 	// .image_4
 	&_4 {}
 }
-
-
+.owerlay {
+	// .owerlay__title
+	&__title {}
+}
+/******************************************
+*************** CONTACTS *****************/
+.contacts {
+	// background-color: $black;
+	// .contacts__title
+	&__title {}
+	// .contacts__row
+	&__row {
+		@include flexbox();
+		justify-content: space-between;
+	}
+	// .contacts__left
+	&__left {}
+	// .contacts__name
+	&__name {}
+	// .contacts__email
+	&__email {}
+	// .contacts__phone
+	&__phone {}
+	// .contacts__right
+	&__right {}
+	// .contacts__form
+	&__form {}
+}
+.form {
+	// .form__title
+	&__title {
+		font-size: 40px;
+		font-weight: 700;
+		margin-bottom: 30px;
+	}
+	// .form__item
+	&__item {
+		margin-bottom: 20px;
+	}
+	// .form__label
+	&__label {
+		display: block;
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	// .form__input
+	&__input {
+		border: solid 1px $black;
+		height: 50px;
+		padding: 0 50px;
+		border-radius: 5px;
+		width: 100%;
+		font-size: 18px;
+	}
+	// .form__button
+	&__button {}
+}
+textarea.form__input {
+	min-height: 120px;
+	resize: vertical;
+	padding: 20px;
+}
+.checkbox {
+	// .checkbox__input
+	&__input {}
+	// .checkbox__label
+	&__label {}
+}
+/*****************************************/
