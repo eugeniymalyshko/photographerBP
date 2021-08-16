@@ -1,3 +1,4 @@
 @mixin min-max($min-width, $max-width, $padding) {min-width: $min-width;max-width: $max-width;padding: 0 $padding;box-sizing: border-box;margin: 0 auto;}
 @mixin flexbox() {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex; display: flex;}
 @mixin box-shadow() {box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);}
+@mixin box-shadow__error() {box-shadow: 0 0 4px rgba(255, 0, 0, 1);}

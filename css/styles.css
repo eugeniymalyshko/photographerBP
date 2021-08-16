@@ -534,7 +534,7 @@ body.lock {
 /*******************************************/
 /**************** TOP-BAR ******************/
 .top-bar {
-  background-color: #1E3259;
+  background-color: #8E8E8E;
 }
 .top-bar__row {
   display: -webkit-box;
@@ -618,6 +618,7 @@ body.lock {
 /***************** HEADER ******************/
 .header {
   background-color: #fff;
+  z-index: 50;
 }
 .header__row {
   display: -webkit-box;
@@ -809,8 +810,8 @@ body.lock {
 }
 .portfolio__prewiev {
   position: relative;
-  -webkit-box-shadow: 0 3px 10px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3px 10px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
 .overlay__title {
   position: absolute;
@@ -844,8 +845,8 @@ body.lock {
 }
 .faciliti__prewiev {
   position: relative;
-  -webkit-box-shadow: 0 3px 10px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3px 10px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
 /******************************************
 *************** CONTACTS *****************/
@@ -857,31 +858,135 @@ body.lock {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+.contacts__left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+}
+.contacts__right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25%;
+          flex: 1 1 25%;
+}
 .form__title {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 30px;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 .form__item {
   margin-bottom: 20px;
 }
 .form__label {
   display: block;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 .form__input {
   border: solid 1px #000;
-  height: 50px;
-  padding: 0 50px;
+  height: 40px;
+  padding: 0 20px;
   border-radius: 5px;
   width: 100%;
   font-size: 18px;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
+.form__input:focus {
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+.form__input._error {
+  -webkit-box-shadow: 0 0 4px red;
+          box-shadow: 0 0 4px red;
+}
+.form__button {
+  width: 50%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 60px;
+  background-color: #468966;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+.form__button:hover {
+  background-color: #025908;
+}
+
 textarea.form__input {
   min-height: 120px;
   resize: vertical;
   padding: 20px;
+  margin-bottom: 20px;
+}
+textarea.form__input._error {
+  -webkit-box-shadow: 0 0 4px red;
+          box-shadow: 0 0 4px red;
+}
+
+.checkbox._error .checkbox__label::before {
+  -webkit-box-shadow: 0 0 4px red;
+          box-shadow: 0 0 4px red;
+}
+.checkbox__input {
+  display: none;
+}
+.checkbox__input:checked + .checkbox__label::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.checkbox__label {
+  font-size: 16px;
+  line-height: 1.5;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.checkbox__label::before {
+  content: "";
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-right: 10px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  height: 24px;
+  background-color: #fff;
+  border: solid 1px #000;
+  border-radius: 4px;
+}
+.checkbox__label::after {
+  -webkit-transition: -webkit-transform 0.5s ease 0s;
+  transition: -webkit-transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: #468966;
+  border-radius: 4px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 /*****************************************/

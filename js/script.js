@@ -1,3 +1,4 @@
+'use strict'
 //===================================== IBG ==============================================
 function ibg() {
 	let ibg = document.querySelectorAll(".ibg");
@@ -8,8 +9,8 @@ function ibg() {
 	}
 }
 ibg();
-//========================================================================================
-//================================= BURGER MENU ==========================================
+/*=======================================================================================
+============================= BURGER MENU ==============================================*/
 document.addEventListener("DOMContentLoaded", function () {
 	document.querySelector('.header__burger').onclick = function (event) {
 		document.querySelector('.header__burger').classList.toggle('active')
@@ -17,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.querySelector('body').classList.toggle('lock')
     }
 })
-//========================================================================================
-//========================= FIXING HEADER ON SCROLL =====================================
+/*=======================================================================================
+========================= FIXING HEADER ON SCROLL =====================================*/
 document.addEventListener('DOMContentLoaded', function () {
 	let scrollpos = window.pageYOffset
 	window.addEventListener('scroll', function () {
@@ -30,24 +31,24 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	})
 })
-//=================================== FORM SEND ==========================================
-'use strict'
+/*=======================================================================================
+=================================== FORM SEND =========================================*/
 document.addEventListener('DOMContentLoaded', function () {
-	const form = document.getElementById('form')
-	form.addEventListener('submit', formSend)
+	const form = document.getElementById('form');
+	form.addEventListener('submit', formSend);
 
 	async function formSend(e) {
 		e.preventDefault();
 
-		let error = formValidate(form)
-		let formData = new FormData(form)
+		let error = formValidate(form);
+		let formData = new FormData(form);
 
 		if (error === 0) {
-			form.classList.add('_sending')
+			form.classList.add('_sending');
 			let responce = await fetch('sendmail.php', {
 				method: 'POST',
 				body: formData
-			})
+			});
 			if (responce.ok) {
 				let result = await responce.json()
 				alert(result.message)
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			}
 		}else {
-			alert('заполните обязательные поля!')
+			alert('Будь ласка заповніть обов\'язкове(ві) поля!');
 		}
 	}
 
@@ -69,24 +70,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		for (let index = 0; index < formReq.length; index++) {
 			const input	= formReq[index]
-			formRemoveError(input)
+			formRemoveError(input);
 			
 			if (input.classList.contains('_email')) {
 				if (emailTest(input)) {
-					formAddError(input)
-					error++
+					formAddError(input);
+					error++;
 				}
-			} else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
-					formAddError(input)
-					error++
+			}else if (input.getAttribute("type") === "textarea" && index === 0) {
+					formAddError(input);
+					error++;
+			}else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
+					formAddError(input);
+					error++;
 			}else {
 				if (input.value === '') {
-					formAddError(input)
-					error++
+					formAddError(input);
+					error++;
 				}
 			}
 		}
-		return error
+		return error;
 	}
 	
 	function formAddError(input) {

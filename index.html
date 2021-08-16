@@ -69,8 +69,8 @@
 			<main class="main">
 				<!-- SECTION BANNER -->
 				<section class="banner ibg">
-					<img src="images/banner.jpg" class="banner__image">
 					<div class="container">
+						<img src="images/banner.jpg" class="banner__image">
 
 					</div>
 				</section>
@@ -238,26 +238,33 @@
 							</div>
 							<div class="contacts__right">
 								<div class="contacts__form">
-									<form action="#" class="form">
+									<form action="#" id="form" class="form">
 										<div class="form__title">Форма зворотнього зв'язку</div>
 										<div class="form__item">
 											<label for="formName" class="form__label">Ваше ім'я*</label>
-											<input type="text" id="request" name="name" class="form__input">
+											<input type="text" id="request" name="name" class="form__input _req">
+										</div>
+										<div class="form__item">
+											<label for="formPhone" class="form__label">Ваш контактний номер телефону</label>
+											<input id="formPhone" type="text" name="phone" class="form__input">
 										</div>
 										<div class="form__item">
 											<label for="formEmail" class="form__label">Ваш e-mail*</label>
-											<input id="formEmail" type="text" name="email" class="form__input">
+											<input id="formEmail" type="text" name="email" class="form__input _req _email">
 										</div>
 										<div class="form__item">
 											<label for="formMessage" class="form__label">Ваше повідомлення*</label>
-											<textarea name="message" id="formMessage" class="form__input">
+											<textarea name="message" type="textarea" id="formMessage" id="textArea" class="form__input _req">
 											</textarea>
 											<div class="form__item">
-											<input id="formAgreement" type="checkbox" name="agreement" class="checkbox__input">
-											<label for="formAgreement" class="checkbox__label"><span>Згода на обробку персональних даних</span></label>
+												<div class="checkbox">
+													<input id="formAgreement" type="checkbox" name="agreement" class="checkbox__input _req">
+													<label for="formAgreement" class="checkbox__label"><span>  Відповідно до Закону України <a href="https://zakon.rada.gov.ua/laws/show/2297-17#Text">"Про захист персональниих даних"</a> Даю згоду на обробку, використання, та доступ до моїх персональних даних та відомостей які надаю про себе для опрацювання запиту.</span></label>
+												</div>
+												
+											</div>
 										</div>
-										</div>
-										<button type="submit" class="form__button">Надіслати</button>
+										<button type="submit" class="form__button uppercase">Надіслати</button>
 									</form>
 								</div>
 							</div>
